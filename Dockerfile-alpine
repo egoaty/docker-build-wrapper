@@ -1,0 +1,11 @@
+##
+## Wrapper for running system updates on alpine based docker images
+##
+
+ARG DISTRO=alpine:3
+FROM $DISTRO
+
+RUN \
+  apk -U upgrade && \
+  rm -rf /var/cache/apk/*
+
